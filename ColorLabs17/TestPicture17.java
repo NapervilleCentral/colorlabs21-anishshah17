@@ -34,6 +34,9 @@ public class TestPicture17
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture moto = new Picture("images/redMotorcycle.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
+     Picture shrine = new Picture("images/femaleLionAndHall.jpg");
+     
+     
 
      //apic.explore();
      moto.explore();
@@ -45,6 +48,13 @@ public class TestPicture17
      Pixel[] pixels;
      //gets pixels from picture and assigns to pixels array
      pixels = ferris1.getPixels();
+     //gets ALL pixles
+     
+     Pixel[] mpixels;
+     mpixels = moto.getPixels();
+     
+     Pixel [] spixels;
+     spixels = shrine.getPixels();
     
      //how many pixels or how large array
     System.out.println("This is a large array"+pixels.length  );
@@ -89,15 +99,76 @@ public class TestPicture17
     pixels[500034].setColor(Color.blue);
 
     ferris1.explore();
-/*
+/**/
    // loop to access indexes of array or collection
 
     //for each loop spot  is a ?
-    for (Pixel spot : pixels)
-    System.out.println( spot );
+    
+    
+    
+    
+    
+    
+    //
+    /*
+    int red;
+    int blue;
+    int green;
+    for (Pixel spot1: mpixels){
+        //System.out.println( spot );
+        red = spot1.getRed();
+        
+        red = (int)(red * .25);
+        
+        spot1.setRed(red);
+        
+    }
+    
+    
+    for (Pixel spot3: mpixels){
+        blue = spot3.getBlue();
+        
+        blue = (int)(blue * Math.random());
+        
+        spot3.setBlue(blue);
+    }
 
-
-   
+    for (Pixel spot4: mpixels){
+        green = spot4.getGreen();
+        
+        green = (int)(green * Math.random());
+        
+        spot4.setGreen(green);
+    }
+    moto.explore();
+    /**/
+    
+    
+    //Lab 1
+    //adjusting Red, Green and Blue
+    int reds;
+    int blues;
+    int greens;
+    for (Pixel spot5: spixels){
+        //System.out.println( spot );
+        reds = spot5.getRed();
+        blues = spot5.getBlue();
+        greens = spot5.getGreen();
+        
+        reds = (int)(reds * .5);
+        blues = (int)(blues * .25);
+        greens = (int)(greens * 1.5);
+        
+        spot5.setRed(reds);
+        spot5.setBlue(blues);
+        spot5.setGreen(greens);
+        
+        
+    }
+    shrine.explore();
+    
+    //
+    
  /**/
 
  /**
