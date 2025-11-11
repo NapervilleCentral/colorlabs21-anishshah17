@@ -82,7 +82,7 @@ public class SheparFaireyLab
         }
 
         me.explore();
-        me.write("anishdjfairy.jpg");
+        me.write("images/anishdjfairy.jpg");
          /**
           * method 2 change
           * 
