@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class SheparFaireyLab here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Anish Shah
+ * AP Computer Science
+ * 11/11/2025
+ * ShepardFairyLab
+ * taking an image, change the colors following the different method instructions listed below, to change an image's color palette
  */
 import java.awt.*;
 import java.util.*;
@@ -17,7 +18,30 @@ public class SheparFaireyLab
      */
     public static void main(String[] args)
     {
-        
+        //method 1 - balanced approach
+        //divide up rgb ranges from 0-255
+         //4 diff buckets
+         //1st bucket - darkest (dark blue)
+         //2nd bucket - not as dark (red)
+         //3rd bucket - somewhat light (light blue)
+         //4th bucket - off white( light)
+         
+         //method 2 - intense approach
+         //take the smallest and biggest rgb value 
+         //once you have those values, then divide that up into 4 equal buckets
+         //then the smallest group, group 1 and group 2 and so on..
+         //will follow the rule of
+         //1st bucket - darkest (dark blue)
+         //2nd bucket - not as dark (red)
+         //3rd bucket - somewhat light (light blue)
+         //4th bucket - off white( light)
+         
+         //method 3 - a different set of colors
+         //choose your own color palette and refine the color palette until it looks like how you want it
+         //continue to refine the color choices and get feedback from peers
+         //save images as you go, and try to find the best color palette
+         
+         
          //opens selfie picture 
           /**/
          String fileName = FileChooser.pickAFile();

@@ -1,10 +1,10 @@
 
 /**
- * Kevin Hayes
- * Test Picture Classes
- *
- * @author (Kevin Hayes)
- * @version (10-19-2016)
+ * Anish Shah
+ * AP Computer Science
+ * 11/11/2025
+ * Notes + ColorLabs
+ * ColorLabs: take images and (adjust the RGB values by a factor, grayscale, negate the picture, lighten the picture (and darken), change RGB values by a number, blueify and colorify (to colors of your face))
  */
 import java.awt.*;
 import java.util.*;
@@ -30,7 +30,7 @@ public class TestPicture17
      //relative path
      //KNOW THIS - ON TEST
      //                          folder/file
-     Picture apic = new Picture("images/beach.jpg");
+     Picture beach = new Picture("images/beach.jpg");
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture moto = new Picture("images/redMotorcycle.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
@@ -42,7 +42,7 @@ public class TestPicture17
      Picture koala = new Picture("images/koala.jpg");
      
 
-     //apic.explore();
+     //beach.explore();
      moto.explore();
      ferris1.explore();
      //displays the picture
@@ -59,7 +59,7 @@ public class TestPicture17
      //lab 1
      Pixel [] spixels;
      spixels = shrine.getPixels();
-     //lab 6 (blueify + colorify)
+     //lab 6 (blueify)
      Pixel [] swpixels;
      swpixels = swan.getPixels();
      //lab 2
@@ -74,6 +74,9 @@ public class TestPicture17
      //lab 3
      Pixel [] kpixels;
      kpixels = koala.getPixels();
+     //lab 6 (colorify)
+     Pixel [] bpixels;
+     bpixels = beach.getPixels();
     
      //how many pixels or how large array
     System.out.println("This is a large array"+pixels.length  );
@@ -185,8 +188,12 @@ public class TestPicture17
         
     }
     shrine.explore();
+    //this writes a copy of the picture to the folder
+    //have to rename picture!!
+    shrine.write("images/shrinergb.jpg");
     
     //lab 2
+    //"negate the picture", make the RGB values opposite
     for (Pixel t : tpixels) {
       t.setRed(255 - t.getRed());
       t.setGreen(255 - t.getGreen());
@@ -195,6 +202,7 @@ public class TestPicture17
     temple.explore();
     
     //lab 3
+    //grayscale
     for (Pixel k : kpixels) {
       int avg = ((k.getRed() + k.getGreen() + k.getBlue()) / 3);
       k.setRed(avg);
@@ -236,7 +244,8 @@ public class TestPicture17
     }
     gorge.explore();
     
-    //lab 5?? @param
+    //lab 5
+    //change red green and blue by some amount (ex: -50, 100)
     
     //lab 6 (blueify)
     for (Pixel s : swan.getPixels()) {
@@ -255,21 +264,20 @@ public class TestPicture17
     }
     swan.explore();
     
-    //lab 6 (colorify)
-    for (Pixel s : swan.getPixels()) {
-      int r = s.getRed();
-      int g = s.getGreen();
-      int b = s.getBlue();
+    //lab 6 (colorify -  to colors similar to my face)
+    for (Pixel b : beach.getPixels()) {
+      int r = b.getRed();
+      int g = b.getGreen();
+      int be = b.getBlue();
 
       //change overall colors to purple if exceeding these values
-      if (r < 150 && g < 180 && b > 150) {
-        s.setRed(200);
-        s.setGreen(50);
-        s.setBlue(200);
+      if (r < 150 && g < 180 && be > 150) {
+        b.setRed(200);
+        b.setGreen(50);
+        b.setBlue(200);
       }
     }
-    swan.explore();
-    //maybe change pic for this one??
+    beach.explore();
  /**/
 
  /**

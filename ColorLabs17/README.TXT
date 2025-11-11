@@ -10,3 +10,6 @@ VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
+
+1) Who 
+	- Critiques/Compliments
