@@ -30,12 +30,16 @@ public class TestPicture17
      //relative path
      //KNOW THIS - ON TEST
      //                          folder/file
-     Picture apic = new Picture("images\\beach.jpg");
+     Picture apic = new Picture("images/beach.jpg");
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture moto = new Picture("images/redMotorcycle.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
      Picture shrine = new Picture("images/femaleLionAndHall.jpg");
-     
+     Picture swan = new Picture("images/swan.jpg");
+     Picture temple = new Picture("images/temple.jpg");
+     Picture mark = new Picture("images/blue-mark.jpg");
+     Picture gorge = new Picture("images/gorge.jpg");
+     Picture koala = new Picture("images/koala.jpg");
      
 
      //apic.explore();
@@ -52,9 +56,24 @@ public class TestPicture17
      
      Pixel[] mpixels;
      mpixels = moto.getPixels();
-     
+     //lab 1
      Pixel [] spixels;
      spixels = shrine.getPixels();
+     //lab 6 (blueify + colorify)
+     Pixel [] swpixels;
+     swpixels = swan.getPixels();
+     //lab 2
+     Pixel [] tpixels;
+     tpixels = temple.getPixels();
+     
+     Pixel [] markpixels;
+     markpixels = mark.getPixels();
+     //lab 4 (lighten + darken)
+     Pixel [] gopixels;
+     gopixels = gorge.getPixels();
+     //lab 3
+     Pixel [] kpixels;
+     kpixels = koala.getPixels();
     
      //how many pixels or how large array
     System.out.println("This is a large array"+pixels.length  );
@@ -167,8 +186,90 @@ public class TestPicture17
     }
     shrine.explore();
     
-    //
+    //lab 2
+    for (Pixel t : tpixels) {
+      t.setRed(255 - t.getRed());
+      t.setGreen(255 - t.getGreen());
+      t.setBlue(255 - t.getBlue());
+    }
+    temple.explore();
     
+    //lab 3
+    for (Pixel k : kpixels) {
+      int avg = ((k.getRed() + k.getGreen() + k.getBlue()) / 3);
+      k.setRed(avg);
+      k.setGreen(avg);
+      k.setBlue(avg);
+    }
+    koala.explore();
+    
+    //lab 4 (lighten)
+    for (Pixel g : gopixels) {
+      int r = (int)(g.getRed() * 1.2);
+      int gr = (int)(g.getGreen() * 1.2);
+      int b = (int)(g.getBlue() * 1.2);
+      //loops incase exceeds rgb values
+      if (r > 255) {
+        r = 255;
+      }
+      if (gr > 255) {
+        gr = 255; 
+      }
+      if (b > 255){
+        b = 255; 
+      }
+
+      g.setRed(r);
+      g.setGreen(gr);
+      g.setBlue(b);
+    }
+    gorge.explore();
+    
+    //lab 4 (darken)
+    for (Pixel g : gopixels) {
+      int r = (int)(g.getRed() * 0.6);
+      int gr = (int)(g.getGreen() * 0.6);
+      int b = (int)(g.getBlue() * 0.6);
+      g.setRed(r);
+      g.setGreen(gr);
+      g.setBlue(b);
+    }
+    gorge.explore();
+    
+    //lab 5?? @param
+    
+    //lab 6 (blueify)
+    for (Pixel s : swan.getPixels()) {
+      int r = (int)(s.getRed() * 0.5);
+      int g = (int)(s.getGreen() * 0.5);
+      int b = (int)(s.getBlue() * 1.8);
+      
+      //safe measure to make sure blue doesn't exceed 255
+      if (b > 255) {
+        b = 255;
+      }
+
+      s.setRed(r);
+      s.setGreen(g);
+      s.setBlue(b);
+    }
+    swan.explore();
+    
+    //lab 6 (colorify)
+    for (Pixel s : swan.getPixels()) {
+      int r = s.getRed();
+      int g = s.getGreen();
+      int b = s.getBlue();
+
+      //change overall colors to purple if exceeding these values
+      if (r < 150 && g < 180 && b > 150) {
+        s.setRed(200);
+        s.setGreen(50);
+        s.setBlue(200);
+      }
+    }
+    swan.explore();
+    //maybe change pic for this one??
  /**/
 
  /**
