@@ -30,15 +30,23 @@ public class TestPicture17
      //relative path
      //KNOW THIS - ON TEST
      //                          folder/file
+     //lab 6 (colorify)
      Picture beach = new Picture("images/beach.jpg");
+     
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture moto = new Picture("images/redMotorcycle.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
+     //lab 1
      Picture shrine = new Picture("images/femaleLionAndHall.jpg");
+     //lab 6 (blueify)
      Picture swan = new Picture("images/swan.jpg");
+     //lab 2 
      Picture temple = new Picture("images/temple.jpg");
+     //lab 5
      Picture mark = new Picture("images/blue-mark.jpg");
+     //lab 4 (lighten/darken)
      Picture gorge = new Picture("images/gorge.jpg");
+     //lab 3
      Picture koala = new Picture("images/koala.jpg");
      
 
@@ -65,7 +73,7 @@ public class TestPicture17
      //lab 2
      Pixel [] tpixels;
      tpixels = temple.getPixels();
-     
+     //lab 5
      Pixel [] markpixels;
      markpixels = mark.getPixels();
      //lab 4 (lighten + darken)

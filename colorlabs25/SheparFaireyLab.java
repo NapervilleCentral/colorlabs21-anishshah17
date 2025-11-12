@@ -64,8 +64,8 @@ public class SheparFaireyLab
         Color darkBlue = new Color(0, 0, 100);       
         Color red = new Color(200, 30, 30);          
         Color lightBlue = new Color(120, 180, 255);  
-        Color offWhite = new Color(245, 245, 220);   
-
+        Color offWhite = new Color(249, 249, 210);   
+        me.explore();
         for (Pixel p : mePixels) {
             int avg = (p.getRed() + p.getGreen() + p.getBlue()) / 3;
 
@@ -91,7 +91,13 @@ public class SheparFaireyLab
          /**
           * custom color palette
           */
-
+        Color navyBlue = new Color(6, 21, 5);
+        Color hotPink = new Color(246, 38, 136);
+        Color tan = new Color(255, 235, 175);
+        Color purple = new Color(127, 0, 255);
+        
+        
+        
          
     }//main       
 }//class
