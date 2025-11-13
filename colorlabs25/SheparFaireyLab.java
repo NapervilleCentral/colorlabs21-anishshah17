@@ -54,18 +54,21 @@ public class SheparFaireyLab
          Picture me = new Picture("images/IMG_0890.jpg");
          Picture me1 = new Picture("images/beach.jpg");
          Picture me2 = new Picture("images/beach.jpg");
+         Pixel[] mePixels = me.getPixels();
          
+         Color darkBlue = new Color(0, 0, 100);       
+         Color red = new Color(200, 30, 30);          
+         Color lightBlue = new Color(120, 180, 255);  
+         Color offWhite = new Color(249, 249, 210);  
+         Color slateGrey = new Color(176,196,222);
+        
          /**
           * method 1 change
           * 
           */
-        Pixel[] mePixels = me.getPixels();
 
-        Color darkBlue = new Color(0, 0, 100);       
-        Color red = new Color(200, 30, 30);          
-        Color lightBlue = new Color(120, 180, 255);  
-        Color offWhite = new Color(249, 249, 210);   
         me.explore();
+        
         for (Pixel p : mePixels) {
             int avg = (p.getRed() + p.getGreen() + p.getBlue()) / 3;
 
@@ -83,12 +86,61 @@ public class SheparFaireyLab
 
         me.explore();
         me.write("images/anishdjfairy.jpg");
+        
+        
+       
          /**
           * method 2 change
           * 
           */
+         int s = 255;
+         int b = 0;
+
+         for (Pixel m : mePixels) {
+           int avg = ((m.getRed() + m.getGreen() + m.getBlue()) / 3);
+           if (avg < s) {
+              s = avg; 
+           }
+           if (avg > b) {
+              b = avg; 
+            }
+           m.setRed(avg);
+           m.setGreen(avg);
+           m.setBlue(avg);
+        }
+        me.explore();
+        
+        System.out.println(s);
+        System.out.println(b);
+        
+        double bucket = (b - s) / 5.0;
+
+        
+        for (Pixel i : mePixels) {
+            int avg = (i.getRed() + i.getGreen() + i.getBlue()) / 3;
+
+            if (avg < (s + bucket)) {
+                i.setColor(darkBlue);
+            } 
+            else if (avg < s + (2 * bucket)) {
+                i.setColor(red);
+            } 
+            else if (avg < s + (3 * bucket)) {
+                i.setColor(lightBlue);
+            }
+            else if (avg < s + (4 * bucket)) {
+                i.setColor(slateGrey);
+            }
+            else {
+                i.setColor(offWhite);
+            }
+            }   
+    
+        me.explore();
+        me.write("images/anishdjfairybuckets.jpg");
          
-         /**
+        
+        /**
           * custom color palette
           */
         Color navyBlue = new Color(6, 21, 5);
