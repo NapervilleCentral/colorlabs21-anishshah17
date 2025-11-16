@@ -54,8 +54,10 @@ public class SheparFaireyLab
          Picture me = new Picture("images/IMG_0890.jpg");
          Picture me1 = new Picture("images/beach.jpg");
          Picture me2 = new Picture("images/beach.jpg");
+         //create array
          Pixel[] mePixels = me.getPixels();
          
+         //shepard fairy color set
          Color darkBlue = new Color(0, 0, 100);       
          Color red = new Color(200, 30, 30);          
          Color lightBlue = new Color(120, 180, 255);  
@@ -68,11 +70,12 @@ public class SheparFaireyLab
           */
 
         me.explore();
-        
+        //loop that takes each pixel and sets it to a certain color
         for (Pixel p : mePixels) {
             int avg = (p.getRed() + p.getGreen() + p.getBlue()) / 3;
+            //finds the average of the RGB values for sorting of darkest to lightest
 
-            
+            //takes the avg and based on the average of the RGB values it sets that pixel to a certain color from darkest to lightest
             if (avg < 64) {
                 p.setColor(darkBlue);
             } else if (avg < 128) {
@@ -85,7 +88,7 @@ public class SheparFaireyLab
         }
 
         me.explore();
-        me.write("images/anishdjfairy.jpg");
+        me.write("images/anishdjfairymethod1.jpg");
         
         
        
@@ -95,6 +98,8 @@ public class SheparFaireyLab
           */
          int s = 255;
          int b = 0;
+         //very similar to first method
+         //in this method, it takes the average of the RGB value and finds the lowest and highest average in the photo
 
          for (Pixel m : mePixels) {
            int avg = ((m.getRed() + m.getGreen() + m.getBlue()) / 3);
@@ -107,6 +112,8 @@ public class SheparFaireyLab
            m.setRed(avg);
            m.setGreen(avg);
            m.setBlue(avg);
+           
+           //grayscales the image when displaying it
         }
         me.explore();
         
@@ -114,10 +121,13 @@ public class SheparFaireyLab
         System.out.println(b);
         
         double bucket = (b - s) / 5.0;
+        //creates 5 buckets 
 
         
         for (Pixel i : mePixels) {
             int avg = (i.getRed() + i.getGreen() + i.getBlue()) / 3;
+            
+            //takes the average of the grayscale photo pixel and puts into a certain bucket assigningm it a certain color
 
             if (avg < (s + bucket)) {
                 i.setColor(darkBlue);
@@ -137,8 +147,8 @@ public class SheparFaireyLab
             }   
     
         me.explore();
-        me.write("images/anishdjfairybuckets.jpg");
-         
+        me.write("images/anishdjfairymethod2.jpg");
+        //writes and explores image using method 2 
         
         /**
           * custom color palette
@@ -147,9 +157,156 @@ public class SheparFaireyLab
         Color hotPink = new Color(246, 38, 136);
         Color tan = new Color(255, 235, 175);
         Color purple = new Color(127, 0, 255);
+        Color gWhite = new Color(245,255,250);
+        //new color palette for customized image
+        
+        for (Pixel p : mePixels) {
+        int r = p.getRed();
+        int g = p.getGreen();
+        int bl = p.getBlue();
+
+        int bright = (r + g + bl) / 3; 
+        
+        
+        //using same method as above, recieve RGB values from the pixel and average them
+        //based on the brightness of the pixel, set it to a certain color
+
+        if (bright < 51) {
+            p.setColor(navyBlue);
+        }
+        else if (bright < 102) {
+            p.setColor(purple);
+        }
+        else if (bright < 153) {
+            p.setColor(hotPink);
+        }
+        else if (bright < 204) {
+            p.setColor(tan);
+        }
+        else {
+            p.setColor(gWhite);
+        }
+        
+        
         
         
         
          
-    }//main       
+    }
+    me.explore();
+    me.write("images/anishdjSF1.jpg");
+    
+    //iteration 2
+    //new colors
+        //new colors, but using some of the ones from the last time
+        Color navy = new Color(0, 0, 128);
+        Color lime = new Color(0, 255, 0);        
+        for (Pixel p : mePixels) {
+        int r = p.getRed();
+        int g = p.getGreen();
+        int bl = p.getBlue();
+
+        int bright = (r + g + bl) / 3; 
+
+        if (bright < 51) {
+            p.setColor(navy);
+        }
+        else if (bright < 102) {
+            p.setColor(purple);
+        }
+        else if (bright < 153) {
+            p.setColor(hotPink);
+        }
+        else if (bright < 204) {
+            p.setColor(lime);
+        }
+        else {
+            p.setColor(gWhite);
+        }
+        
+        
+        
+        
+        
+         
+    }
+    me.explore();
+    me.write("images/anishdjSF2.jpg");
+    
+    //iteration 3
+    //new colors
+    
+    Color steel = new Color(25, 25, 30);
+    Color brick = new Color(180, 60, 40);
+    Color rustyBlue = new Color(110, 140, 170);
+    Color gray = new Color(235, 240, 245);
+    Color amber = new Color(235, 180, 60);
+    
+    
+    for (Pixel d : mePixels) {
+        int r = d.getRed();
+        int g = d.getGreen();
+        int bl = d.getBlue();
+
+        int bright = (r + g + bl) / 3; 
+
+        if (bright < 51) {
+            d.setColor(steel);
+        }
+        else if (bright < 102) {
+            d.setColor(brick);
+        }
+        else if (bright < 153) {
+            d.setColor(rustyBlue);
+        }
+        else if (bright < 204) {
+            d.setColor(amber);
+        }
+        else {
+            d.setColor(gray);
+        }
+        
+         
+    }
+    me.explore();
+    me.write("images/anishdjfairySF3.jpg");
+    
+    //iteration 4
+    //new Colors
+    
+    Color brightPurple = new Color(33, 6, 114);
+    Color magenta = new Color(200, 40, 110);
+    Color bOrange = new Color(255, 140, 60);
+    Color solarYellow = new Color(255, 215, 90);
+    Color cream = new Color(250, 235, 215);
+    
+    for (Pixel j : mePixels) {
+        int r = j.getRed();
+        int g = j.getGreen();
+        int bl = j.getBlue();
+
+        int bright = (r + g + bl) / 3; 
+
+        if (bright < 51) {
+            j.setColor(brightPurple);
+        }
+        else if (bright < 102) {
+            j.setColor(magenta);
+        }
+        else if (bright < 153) {
+            j.setColor(bOrange);
+        }
+        else if (bright < 204) {
+            j.setColor(solarYellow);
+        }
+        else {
+            j.setColor(cream);
+        }
+        
+         
+    }
+    me.explore();
+    me.write("images/anishdjfairySF4final.jpg");
+    
+  }
 }//class
