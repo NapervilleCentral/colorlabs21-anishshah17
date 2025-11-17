@@ -11,12 +11,16 @@ AUTHORS: Anish Shah
 
 1) Thomas
 	- I like the brightness of the picture, lots of pink and purple so try adding it some greys or whites
+        - added slateGrey and updated Navy
 
 2) Hashir
         - The slate grey is nice, but I feel like it has too much of a grayscale vibe, and the navy doesn't stand out.
+        - changed and made navy different and added a different purple and offWhite
 
 3) Ayush
         - The purple and cream are nice, but I feel like it's too loud and isn't soothing to the eye, doesn't really fit the picture
+        - changed purple and cream to orange, made cream have more of a yellow hue
 
 4) Nick
         - I really like the vintage vibe that this picture gives with the orange and cream and the navy in the background. 
+        - kept it as my final because I liked it and Nick liked it as well
