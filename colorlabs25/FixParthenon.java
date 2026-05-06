@@ -1,33 +1,41 @@
 
 /**
- * Write a description of class FixParthenon here.
+ * Fixes the right side of the temple roof by mirroring the left side.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Anish Shah
+ * @version 5/6/2026
  */
 public class FixParthenon
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
-     * Constructor for objects of class FixParthenon
+     * Method to mirror part of the temple picture around a
+     * vertical line at the mirror point.
      */
-    public FixParthenon()
+    public static void mirrorTemple(Picture apic)
     {
-        // initialise instance variables
-        x = 0;
+        int mirrorPoint = 276;
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+
+        for (int y = 27; y < 97; y++)
+        {
+            for (int x = 13; x < mirrorPoint; x++)
+            {
+                leftPixel = apic.getPixel(x, y);
+                rightPixel = apic.getPixel(mirrorPoint + (mirrorPoint - x), y);
+                rightPixel.setColor(leftPixel.getColor());
+            }
+        }
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Main method to test the fixed temple picture.
      */
-    public int sampleMethod(int y)
+    public static void main(String[] args)
     {
-        // put your code here
-        return x + y;
+        Picture temple = new Picture("images/temple.jpg");
+        mirrorTemple(temple);
+        temple.write("images/templefixed.jpg");
+        temple.explore();
     }
 }

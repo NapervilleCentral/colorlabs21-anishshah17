@@ -20,8 +20,8 @@ public class testpic
   {
       //opens picture using a dialog box
       
-     String fileName = FileChooser.pickAFile();
-     Picture pictObj = new Picture(fileName);
+     //String fileName = FileChooser.pickAFile();
+     Picture pictObj = new Picture();
      pictObj.explore();
 
      //opens a pictue using a path
