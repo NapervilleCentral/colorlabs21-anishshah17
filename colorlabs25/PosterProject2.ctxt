@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=PosterProject2
+comment1.params=source
+comment1.target=Picture\ rotateRight(Picture)
+comment2.params=source\ target\ startX\ startY
+comment2.target=void\ copyToCanvas(Picture,\ Picture,\ int,\ int)
+comment3.params=apic
+comment3.target=void\ mirrorVertical(Picture)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

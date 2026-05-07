@@ -50,6 +50,7 @@ public class PosterProject
         int clearance = 200;
         Picture lolla = new Picture("images/lolla.jpg");
         int pictureWidth = lolla.getWidth();
+        int pictureHeight = lolla.getHeight();
         Picture canvas = new Picture("images/lollacanvas.jpg");
 
         copyToCanvas(lolla, canvas, 0, 0);
