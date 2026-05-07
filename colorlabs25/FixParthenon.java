@@ -1,16 +1,13 @@
 
 /**
- * Fixes the right side of the temple roof by mirroring the left side.
- *
- * @author Anish Shah
- * @version 5/6/2026
+ * Anish Shah
+ * 5/6/2026
+ * AP Computer Science
+ * MirrorTemple
+ * Mirror the upper part of the Parthenon to fix the broken part, without changing the bottom part
  */
 public class FixParthenon
 {
-    /**
-     * Method to mirror part of the temple picture around a
-     * vertical line at the mirror point.
-     */
     public static void mirrorTemple(Picture apic)
     {
         int mirrorPoint = 276;
@@ -27,10 +24,6 @@ public class FixParthenon
             }
         }
     }
-
-    /**
-     * Main method to test the fixed temple picture.
-     */
     public static void main(String[] args)
     {
         Picture temple = new Picture("images/temple.jpg");

@@ -1,10 +1,8 @@
 #BlueJ class context
 comment0.target=FixParthenon
-comment0.text=\n\ Fixes\ the\ right\ side\ of\ the\ temple\ roof\ by\ mirroring\ the\ left\ side.\n\n\ @author\ Anish\ Shah\n\ @version\ 5/6/2026\n
+comment0.text=\n\ Anish\ Shah\n\ 5/6/2026\n\ AP\ Computer\ Science\n\ MirrorTemple\n\ Mirror\ the\ upper\ part\ of\ the\ Parthenon\ to\ fix\ the\ broken\ part,\ without\ changing\ the\ bottom\ part\n
 comment1.params=apic
 comment1.target=void\ mirrorTemple(Picture)
-comment1.text=\n\ Method\ to\ mirror\ part\ of\ the\ temple\ picture\ around\ a\n\ vertical\ line\ at\ the\ mirror\ point.\n
 comment2.params=args
 comment2.target=void\ main(java.lang.String[])
-comment2.text=\n\ Main\ method\ to\ test\ the\ fixed\ temple\ picture.\n
 numComments=3

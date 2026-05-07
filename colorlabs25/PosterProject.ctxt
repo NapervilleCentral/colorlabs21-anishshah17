@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=PosterProject
+comment0.text=\n\ Anish\ Shah\n\ 5/7/2026\n\ AP\ Computer\ Science\n\ Poster\ Project\n\ Creates\ a\ collage\ of\ images\ that\ all\ are\ edited\ in\ different\ ways\n
+comment1.params=source\ target\ startX\ startY
+comment1.target=void\ copyToCanvas(Picture,\ Picture,\ int,\ int)
+comment2.params=apic
+comment2.target=void\ mirrorVertical(Picture)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
