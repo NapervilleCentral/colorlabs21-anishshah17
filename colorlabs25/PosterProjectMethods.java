@@ -6,7 +6,7 @@
  * Poster Project
  * Creates a collage of images that all are edited in different ways
  */
-public class PosterProject
+public class PosterProjectMethods
 {
     public static Picture rotateRight(Picture source)
     {
@@ -271,88 +271,4 @@ public class PosterProject
         }
     }
 
-    public static void main(String[] args)
-    {
-        Picture lolla = new Picture("images/lolla.jpg");
-        Picture verticalLolla = rotateRight(lolla);
-        int pictureWidth = verticalLolla.getWidth();
-        int pictureHeight = verticalLolla.getHeight();
-        Picture canvas = new Picture("images/lollacanvas.jpg");
-
-        copyToCanvas(verticalLolla, canvas, 0, 0);
-
-        Picture mirroredLolla = new Picture(verticalLolla);
-        mirrorVertical(mirroredLolla);
-        copyToCanvas(mirroredLolla, canvas, pictureWidth, 0);
-
-        Picture posterizedLolla = new Picture(verticalLolla);
-        posterize(posterizedLolla, 4);
-        copyToCanvas(posterizedLolla, canvas, pictureWidth * 2, 0);
-
-        Picture sepiaLolla = new Picture(verticalLolla);
-        sepiaTint(sepiaLolla);
-        copyToCanvas(sepiaLolla, canvas, 0, pictureHeight);
-
-        /*
-        Picture edgeLolla = new Picture(verticalLolla);
-        edgeDetection(edgeLolla, 20);
-        copyToCanvas(edgeLolla, canvas, pictureWidth, pictureHeight);
-        */
-
-        Picture recursiveLolla = new Picture(pictureWidth, pictureHeight);
-        recursiveScale(verticalLolla, recursiveLolla, 0, 0, pictureWidth, pictureHeight, false);
-        copyToCanvas(recursiveLolla, canvas, pictureWidth, pictureHeight);
-        
-        Picture negativeLolla = new Picture(verticalLolla);
-        negate(negativeLolla);
-        copyToCanvas(negativeLolla, canvas, pictureWidth * 2, pictureHeight);
-
-        Picture neonPurpleLolla = new Picture(verticalLolla);
-        colorReplacement(neonPurpleLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(35, 35, 45),
-                         new java.awt.Color(53, 32, 132),
-                         80);
-        colorReplacement(neonPurpleLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(115, 95, 125),
-                         new java.awt.Color(157, 74, 214),
-                         75);
-        colorReplacement(neonPurpleLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(220, 215, 205),
-                         new java.awt.Color(237, 178, 255),
-                         80);
-        copyToCanvas(neonPurpleLolla, canvas, 0, pictureHeight * 2);
-
-        Picture electricBlueLolla = new Picture(verticalLolla);
-        colorReplacement(electricBlueLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(30, 35, 40),
-                         new java.awt.Color(12, 31, 73),
-                         80);
-        colorReplacement(electricBlueLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(85, 105, 120),
-                         new java.awt.Color(28, 67, 125),
-                         80);
-        colorReplacement(electricBlueLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(225, 220, 210),
-                         new java.awt.Color(130, 158, 205),
-                         80);
-        copyToCanvas(electricBlueLolla, canvas, pictureWidth, pictureHeight * 2);
-
-        Picture sunsetPopLolla = new Picture(verticalLolla);
-        colorReplacement(sunsetPopLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(40, 45, 50),
-                         new java.awt.Color(120, 18, 78),
-                         80);
-        colorReplacement(sunsetPopLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(90, 110, 75),
-                         new java.awt.Color(255, 37, 168),
-                         80);
-        colorReplacement(sunsetPopLolla, 0, pictureWidth, 0, pictureHeight,
-                         new java.awt.Color(205, 175, 130),
-                         new java.awt.Color(255, 158, 218),
-                         85);
-        copyToCanvas(sunsetPopLolla, canvas, pictureWidth * 2, pictureHeight * 2);
-
-        canvas.write("images/lollacollage.jpg");
-        canvas.explore();
-    }
 }
