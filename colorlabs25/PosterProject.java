@@ -180,24 +180,40 @@ public class PosterProject
 
     public static void recursiveScale(Picture source, Picture target,
                                       int startX, int startY,
-                                      int newWidth, int newHeight)
+                                      int newWidth, int newHeight, boolean isNegated)
     {
         if (newWidth < 40 || newHeight < 40)
         {
             return;
         }
 
-        copyScaledToCanvas(source, target, startX, startY, newWidth, newHeight);
+        copyScaledToCanvas(source, target, startX, startY, newWidth, newHeight, isNegated);
         recursiveScale(source, target,
                        startX + newWidth / 4,
                        startY + newHeight / 4,
                        newWidth / 2,
-                       newHeight / 2);
+                       newHeight / 2, !isNegated);
+    }
+    
+    public static void negate(Picture apic) {
+        Pixel pixel = null;
+    
+        for (int x = 0; x < apic.getWidth(); x++)
+        {
+            for (int y = 0; y < apic.getHeight(); y++)
+            {
+                pixel = apic.getPixel(x, y);
+                
+                pixel.setRed(255 - pixel.getRed());
+                pixel.setGreen(255 - pixel.getGreen());
+                pixel.setBlue(255 - pixel.getBlue());
+            }
+        }
     }
 
     public static void copyScaledToCanvas(Picture source, Picture target,
                                           int startX, int startY,
-                                          int newWidth, int newHeight)
+                                          int newWidth, int newHeight, boolean negate)
     {
         Pixel sourcePix = null;
         Pixel targetPix = null;
@@ -210,7 +226,14 @@ public class PosterProject
                 int sourceY = targetY * source.getHeight() / newHeight;
                 sourcePix = source.getPixel(sourceX, sourceY);
                 targetPix = target.getPixel(startX + targetX, startY + targetY);
-                targetPix.setColor(sourcePix.getColor());
+                if (negate) {
+                    targetPix.setRed(255 - sourcePix.getRed());
+                    targetPix.setGreen(255 - sourcePix.getGreen());
+                    targetPix.setBlue(255 - sourcePix.getBlue());
+                } 
+                else {
+                    targetPix.setColor(sourcePix.getColor());
+                }
             }
         }
     }
@@ -244,8 +267,12 @@ public class PosterProject
         */
 
         Picture recursiveLolla = new Picture(pictureWidth, pictureHeight);
-        recursiveScale(verticalLolla, recursiveLolla, 0, 0, pictureWidth, pictureHeight);
+        recursiveScale(verticalLolla, recursiveLolla, 0, 0, pictureWidth, pictureHeight, false);
         copyToCanvas(recursiveLolla, canvas, pictureWidth, pictureHeight);
+        
+        Picture negativeLolla = new Picture(verticalLolla);
+        negate(negativeLolla);
+        copyToCanvas(negativeLolla, canvas, pictureWidth * 2, pictureHeight);
 
         canvas.write("images/lollacollage.jpg");
         canvas.explore();
