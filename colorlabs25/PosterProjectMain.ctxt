@@ -1,7 +1,6 @@
 #BlueJ class context
 comment0.target=PosterProjectMain
-comment0.text=\n\ Main\ program\ for\ the\ poster\ project\ collage.\n\n\ @author\ Anish\ Shah\n\ @version\ 5/13/2026\n
+comment0.text=\r\n\ Anish\ Shah\r\n\ 5/14/2026\r\n\ AP\ Computer\ Science\r\n\ Poster\ ProjectMain\r\n\ Creates\ a\ collage\ of\ images\ that\ all\ are\ edited\ in\ different\ ways\ (main)\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\n\ Builds\ and\ displays\ the\ final\ collage.\n
 numComments=2

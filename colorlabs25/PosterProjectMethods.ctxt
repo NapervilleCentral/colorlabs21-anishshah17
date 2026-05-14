@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PosterProjectMethods
-comment0.text=\n\ Anish\ Shah\n\ 5/7/2026\n\ AP\ Computer\ Science\n\ Poster\ Project\n\ Creates\ a\ collage\ of\ images\ that\ all\ are\ edited\ in\ different\ ways\n
+comment0.text=\r\n\ Anish\ Shah\r\n\ 5/14/2026\r\n\ AP\ Computer\ Science\r\n\ Poster\ ProjectMethods\r\n\ Creates\ a\ collage\ of\ images\ that\ all\ are\ edited\ in\ different\ ways\ (methods)\r\n
 comment1.params=source
 comment1.target=Picture\ rotateRight(Picture)
 comment10.params=pixel
@@ -13,8 +13,6 @@ comment13.params=apic
 comment13.target=void\ negate(Picture)
 comment14.params=source\ target\ startX\ startY\ newWidth\ newHeight\ useWarmTint
 comment14.target=void\ copyScaledToCanvas(Picture,\ Picture,\ int,\ int,\ int,\ int,\ boolean)
-comment15.params=args
-comment15.target=void\ main(java.lang.String[])
 comment2.params=source\ target\ startX\ startY
 comment2.target=void\ copyToCanvas(Picture,\ Picture,\ int,\ int)
 comment3.params=apic
@@ -31,4 +29,4 @@ comment8.params=apic\ startX\ endX\ startY\ endY\ color1\ color2\ distance
 comment8.target=void\ colorReplacement(Picture,\ int,\ int,\ int,\ int,\ java.awt.Color,\ java.awt.Color,\ double)
 comment9.params=pixel\ color
 comment9.target=double\ colorDistance(Pixel,\ java.awt.Color)
-numComments=16
+numComments=15

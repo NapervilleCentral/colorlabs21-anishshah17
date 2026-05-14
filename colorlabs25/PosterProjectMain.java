@@ -1,15 +1,13 @@
 
 /**
- * Main program for the poster project collage.
- *
- * @author Anish Shah
- * @version 5/13/2026
+ * Anish Shah
+ * 5/14/2026
+ * AP Computer Science
+ * Poster ProjectMain
+ * Creates a collage of images that all are edited in different ways (main)
  */
 public class PosterProjectMain
 {
-    /**
-     * Builds and displays the final collage.
-     */
     public static void main(String[] args)
     {
         Picture lolla = new Picture("images/lolla.jpg");

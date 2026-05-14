@@ -1,7 +1,7 @@
 
 /**
  * Anish Shah
- * 5/7/2026
+ * 5/14/2026
  * AP Computer Science
  * Poster Project
  * Creates a collage of images that all are edited in different ways
@@ -215,7 +215,7 @@ public class PosterProject
                                       int startX, int startY,
                                       int newWidth, int newHeight, boolean useWarmTint)
     {
-        if (newWidth < 40 || newHeight < 40)
+        if (newWidth < 20 || newHeight < 20)
         {
             return;
         }

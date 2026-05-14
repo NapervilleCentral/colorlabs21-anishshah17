@@ -1,10 +1,10 @@
 
 /**
  * Anish Shah
- * 5/7/2026
+ * 5/14/2026
  * AP Computer Science
- * Poster Project
- * Creates a collage of images that all are edited in different ways
+ * Poster ProjectMethods
+ * Creates a collage of images that all are edited in different ways (methods)
  */
 public class PosterProjectMethods
 {
