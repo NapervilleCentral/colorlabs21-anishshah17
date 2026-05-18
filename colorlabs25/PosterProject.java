@@ -8,7 +8,7 @@
  */
 public class PosterProject
 {
-    /** Method that rotates a picture 90 degrees to the right. */
+    /** Rotates a picture 90 degrees to the right. */
     public static Picture rotateRight(Picture source)
     {
         Picture target = new Picture(source.getHeight(), source.getWidth());
@@ -26,7 +26,7 @@ public class PosterProject
         return target;
     }
 
-    /** Method that copies one picture onto a target canvas at a starting point. */
+    /** Copies one picture onto a target canvas at a starting point. */
     public static void copyToCanvas(Picture source, Picture target, int startX, int startY)
     {
         Pixel sourcePix = null;
@@ -47,7 +47,7 @@ public class PosterProject
         }
     }
 
-    /** Method that mirrors a picture across its vertical center line. */
+    /** Mirrors a picture across its vertical center line. */
     public static void mirrorVertical(Picture apic)
     {
         int width = apic.getWidth();
@@ -66,7 +66,7 @@ public class PosterProject
         }
     }
 
-    /** Method that reduces a picture to a smaller number of color levels. */
+    /** Reduces a picture to a smaller number of color levels. */
     public static void posterize(Picture apic, int levels)
     {
         Pixel pixel = null;
@@ -84,7 +84,7 @@ public class PosterProject
         }
     }
 
-    /** Method that rounds one color value to a posterized level. */
+    /** Rounds one color value to a posterized level. */
     public static int posterizeValue(int value, int step)
     {
         int newValue = (value / step) * step + step / 2;
@@ -97,7 +97,7 @@ public class PosterProject
         return newValue;
     }
 
-    /** Method that changes a picture to a sepia-tinted version. */
+    /** Changes a picture to a sepia-tinted version. */
     public static void sepiaTint(Picture apic)
     {
         Pixel pixel = null;
@@ -138,7 +138,7 @@ public class PosterProject
         }
     }
 
-    /** Method that turns strong vertical color changes black and softer areas white. */
+    /** Turns strong color areas black and softer areas white. */
     public static void edgeDetection(Picture apic, double amount)
     {
         Pixel topPixel = null;
@@ -167,7 +167,7 @@ public class PosterProject
         }
     }
 
-    /** Method that replaces pixels near one color with another color in a selected area. */
+    /** Replaces pixels near one color with another color in a selected area. */
     public static void colorReplacement(Picture apic, int startX, int endX,
                                         int startY, int endY,
                                         java.awt.Color color1,
@@ -190,7 +190,7 @@ public class PosterProject
         }
     }
 
-    /** Method that calculates the color distance between a pixel and a color. */
+    /** Calculates the color distance between a pixel and a color. */
     public static double colorDistance(Pixel pixel, java.awt.Color color)
     {
         int redDifference = pixel.getRed() - color.getRed();
@@ -202,13 +202,13 @@ public class PosterProject
                          blueDifference * blueDifference);
     }
 
-    /** Method that calculates the average RGB value of a pixel. */
+    /** Calculates the average RGB value of a pixel. */
     public static int colorAverage(Pixel pixel)
     {
         return (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     }
 
-    /** Method that keeps a color value between 0 and 255. */
+    /** Keeps a color value between 0 and 255. */
     public static int limit(int value)
     {
         if (value < 0)
@@ -222,7 +222,7 @@ public class PosterProject
         return value;
     }
 
-    /** Method that creates a recursive shrinking picture effect. */
+    /** Creates a recursive shrinking picture effect. */
     public static void recursiveScale(Picture source, Picture target,
                                       int startX, int startY,
                                       int newWidth, int newHeight, boolean useWarmTint)
@@ -240,7 +240,7 @@ public class PosterProject
                        newHeight / 2, !useWarmTint);
     }
     
-    /** Method that changes a picture to its negative colors. */
+    /** Changes a picture to its negative colors. */
     public static void negate(Picture apic) {
         Pixel pixel = null;
     
@@ -257,7 +257,7 @@ public class PosterProject
         }
     }
 
-    /** Method that copies a scaled picture section onto a target canvas. */
+    /** Copies a scaled picture section onto a target canvas. */
     public static void copyScaledToCanvas(Picture source, Picture target,
                                           int startX, int startY,
                                           int newWidth, int newHeight, boolean useWarmTint)
@@ -285,7 +285,7 @@ public class PosterProject
         }
     }
 
-    /** Method that builds and displays the final collage. */
+    /** Builds and displays the final collage. */
     public static void main(String[] args)
     {
         Picture lolla = new Picture("images/lolla.jpg");

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PosterProjectMethods
-comment0.text=\n\ Anish\ Shah\n\ 5/14/2026\n\ AP\ Computer\ Science\n\ Poster\ ProjectMethods\n\ Creates\ a\ collage\ of\ images\ that\ all\ are\ edited\ in\ different\ ways\ (methods)\n
+comment0.text=\r\n\ Anish\ Shah\r\n\ 5/14/2026\r\n\ AP\ Computer\ Science\r\n\ Poster\ ProjectMethods\r\n\ Creates\ a\ collage\ of\ images\ that\ all\ are\ edited\ in\ different\ ways\ (methods)\r\n
 comment1.params=source
 comment1.target=Picture\ rotateRight(Picture)
 comment1.text=Method\ that\ rotates\ a\ picture\ 90\ degrees\ to\ the\ right.
